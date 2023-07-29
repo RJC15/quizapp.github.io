@@ -15,22 +15,17 @@
     </div>
 
     <div class="item-buttons question-bank-buttons" style="display: none;">
-      <div class="centered-text"> <!-- Added a div to center the text -->
-        <h2>Please select a subject</h2>
-      </div>
+      <h2>Please select a subject</h2>
       <button data-items="EE" class="btn">EE</button>
       <button data-items="ESAS" class="btn">ESAS</button>
       <button data-items="MATH" class="btn">MATH</button>
     </div>
 
     <div class="item-buttons question-items-buttons" style="display: none;">
-      <div class="centered-text"> <!-- Added a div to center the text -->
-        <h2>Select the number of items</h2>
-      </div>
+      <h2>Select the number of items</h2>
       <button data-items="20" class="btn">20 Items</button>
       <button data-items="50" class="btn">50 Items</button>
       <button data-items="100" class="btn">100 Items</button>
-      <button id="back-btn" class="btn">Back</button>
     </div>
 
     <div class="quiz-container" style="display: none;">
@@ -52,31 +47,6 @@
       <button id="main-menu-btn" class="btn">Main Menu</button>
     </div>
   </div>
-
-  <script>
-    const startButton = document.getElementById('start-btn');
-    const itemButtons = document.querySelectorAll('.item-buttons button');
-    const questionItemsButtonsContainer = document.querySelector('.question-items-buttons');
-    const backButton = document.getElementById('back-btn');
-
-    startButton.addEventListener('click', () => {
-      document.querySelector('.start-container').style.display = 'none';
-      document.querySelector('.question-bank-buttons').style.display = 'block';
-    });
-
-    itemButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        document.querySelector('.question-bank-buttons').style.display = 'none';
-        questionItemsButtonsContainer.style.display = 'flex';
-        questionItemsButtonsContainer.setAttribute('data-selected-bank', button.getAttribute('data-items'));
-      });
-    });
-
-    backButton.addEventListener('click', () => {
-      questionItemsButtonsContainer.style.display = 'none';
-      document.querySelector('.question-bank-buttons').style.display = 'block';
-    });
-  </script>
 
   <script src="script.js"></script>
 </body>
